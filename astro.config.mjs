@@ -26,6 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   site: 'https://joncote.github.io/',
+  base: 'PortfolioWebsite/',
   output: 'static',
 
   integrations: [
