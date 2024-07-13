@@ -12,7 +12,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'Jonathan Cote Portfolio',
 };
 ---
 
@@ -29,7 +29,7 @@ const metadata = {
       ]}
       actions={[
         {
-          text: 'Hire me',
+          text: 'Contact Me',
           href: '#',
         },
       ]}
@@ -75,7 +75,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: '',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -106,14 +106,13 @@ const metadata = {
     items={[
       {
         title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+          'Machine Learning Developer Co-op <br /> <span class="font-normal">Energy In Cities, Victoria, BC</span> <br /> <span class="text-sm font-normal">01/2022 - 08/2022</span>',
+        description: `• Spearheaded redesign of the Machine Learning (ML) pipeline to expand supported building data sets and reduce model training times, 
+                      resulting in overall compute time saving of 50% to achieve project objectives. <br /> 
+                      • Developed robust tooling to streamline research initiatives, reducing complexity of development, training and
+                      testing new ML models. <br /> 
+                      • Maintained the GitLab repository and comprehensive wiki documentation, reducing onboarding time for new
+                      researchers and developers, resulting in faster project ramp-up and knowledge transfer.`,
         icon: 'tabler:briefcase',
       },
     ]}
@@ -127,11 +126,10 @@ const metadata = {
     title="Education"
     items={[
       {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        title: `Bachelor of Science in Computer Science <br /> <span class="font-normal">University of Victoria</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>`,
+        description: `• Computer Graphics and Gaming Specialization <br /> 
+                      • Dean's List for Academic Excellence <br />
+                      • Graduated with Distinction`,
         icon: 'tabler:school',
       },
     ]}
@@ -142,45 +140,69 @@ const metadata = {
 
   <Features3
     title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    subtitle=""
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Graphic design',
-        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
+        title: 'C++',
+        description: '',
       },
       {
-        title: 'Branding and identity',
-        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+        title: 'Python',
+        description: '',
       },
       {
-        title: 'User-centered design',
-        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+        title: 'C',
+        description: '',
       },
       {
-        title: 'Adobe Creative Suite',
-        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+        title: 'C#',
+        description: '',
       },
       {
-        title: 'Typography',
-        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+        title: 'OpenGL',
+        description: '',
       },
       {
-        title: 'Color theory',
-        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+        title: 'SQL',
+        description: '',
       },
       {
-        title: 'Print and digital design',
-        description: 'Knowledgeable in designing for both print materials and digital platforms.',
+        title: 'Computer Graphics',
+        description: '',
       },
       {
-        title: 'Attention to detail',
-        description: 'Diligent in maintaining precision and quality in all design work.',
+        title: 'Computer Animation & Simulation Systems',
+        description: '',
       },
       {
-        title: 'Adaptability',
-        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
+        title: 'Geometric Modeling',
+        description: '',
+      },
+      {
+        title: 'Machine Learning & AI',
+        description: '',
+      },
+      {
+        title: 'Data Structures & Algorithms',
+        description: '',
+      },
+      {
+        title: 'Data Compression',
+        description: '',
+      },
+      {
+        title: 'Computer Communications and Networking',
+        description: '',
+      },
+      {
+        title: 'Version Control Systems',
+        description: '',
+      },
+      {
+        title: 'Client Driven Development',
+        description: '',
       },
     ]}
   />
@@ -189,8 +211,8 @@ const metadata = {
 
   <Content
     id="porfolio"
-    title="Elevating visual narratives"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    title="Projects"
+    subtitle="Explore my portfolio, where passion, creativity, exploration, and engineering converge."
     isReversed
     items={[
       {
@@ -205,7 +227,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+      src: '~/assets/images/Artisway.png',
       alt: 'Tech Design Image',
     }}
     callToAction={{
@@ -217,7 +239,7 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+        <span class="text-2xl">Artisway</span>
       </h3>
     </Fragment>
 
@@ -300,69 +322,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Client testimonials"
-    subtitle="Discover what clients have to say about their experiences working with me."
-    testimonials={[
-      {
-        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
-        name: 'Mark Thompson',
-        job: 'Creative director',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
-        },
-      },
-      {
-        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
-        name: 'Emily Martinez',
-        job: 'CEO',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-          alt: 'Emily Martinez Image',
-        },
-      },
-      {
-        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
-        name: 'Laura Simmons',
-        job: 'Founder of an NGO',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Laura Simmons Image',
-        },
-      },
-      {
-        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
-        name: 'Alex Foster',
-        job: 'Director of web services',
-        image: {
-          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Alex Foster Image',
-        },
-      },
-      {
-        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
-        name: 'Jessica Collins',
-        job: 'Product Manager',
-        image: {
-          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
-          alt: 'Jessica Collins Image',
-        },
-      },
-      {
-        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
-        name: 'Michael Carter',
-        job: 'Event Coordinator',
-        image: {
-          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Michael Carter Image',
-        },
-      },
-    ]}
-  />
 
   <!-- CallToAction Widget *********** -->
 
