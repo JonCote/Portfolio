@@ -19,7 +19,7 @@ export const headerData = {
         },
         {
           text: 'Personal',
-          href: getPermalink('/'),
+          href: getPermalink('/homes/personal'),
         },
       ],
     },
