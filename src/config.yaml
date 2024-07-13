@@ -1,6 +1,6 @@
 site:
   name: JonCotePortfolio
-  site: 'https://joncote.github.io'
+  site: 'https://joncote.github.io/PortfolioWebsite'
   base: '/PortfolioWebsite'
   trailingSlash: false
 
