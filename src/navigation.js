@@ -11,12 +11,12 @@ export const headerData = {
       href: getHomePermalink() + getPermalink('#about'),
     },
     {
-      text: 'Resume',
-      href: getHomePermalink() + getPermalink('#resume'),
-    },
-    {
       text: 'Education',
       href: getHomePermalink() + getPermalink('#education'),
+    },
+    {
+      text: 'Resume',
+      href: getHomePermalink() + getPermalink('#resume'),
     },
     {
       text: 'Projects',
