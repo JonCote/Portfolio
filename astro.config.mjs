@@ -25,8 +25,8 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://joncote.github.io',
-  base: '/Portfolio',
+  site: 'https://joncote.github.io/Portfolio',
+  base: '/',
   output: 'static',
 
   integrations: [
