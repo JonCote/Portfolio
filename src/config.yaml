@@ -1,8 +1,8 @@
 site:
   name: JonCotePortfolio
   site: 'https://joncote.github.io/Portfolio/'
-  base: '/Portfolio'
-  trailingSlash: false
+  base: '/Portfolio/'
+  trailingSlash: true
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
