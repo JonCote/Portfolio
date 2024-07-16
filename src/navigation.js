@@ -15,6 +15,10 @@ export const headerData = {
       href: getHomePermalink() + getPermalink('#resume'),
     },
     {
+      text: 'Education',
+      href: getHomePermalink() + getPermalink('#education'),
+    },
+    {
       text: 'Projects',
       href: getBlogPermalink(),
     },
@@ -23,7 +27,7 @@ export const headerData = {
   actions: [
     { 
       text: 'Contact Me',
-      href: getPermalink('/contact#form')
+      href: getPermalink('/contact')
     }
   ],
 };
