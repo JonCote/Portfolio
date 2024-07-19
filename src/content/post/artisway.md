@@ -1,15 +1,15 @@
 ---
 publishDate: 2023-08-06T00:00:00Z
 title: Artisway
-excerpt: Personalize AstroWind template for your brand. Our guide unlocks seamless customization steps for a unique online presence.
 image: ~/assets/images/Artisway.png
-video: https://www.youtube.com/watch?v=mx165chMrPo&t=37s
+category: Web Development
 tags:
-  - astro
-  - tailwind css
-  - theme
+  - React
+  - TypeScript
+  - PostgreSQL
+  - API Development
 metadata:
-  canonical: https://astrowind.vercel.app/how-to-customize-astrowind-to-your-brand
+  canonical: https://www.artisway.ca/
 ---
 
 ## Congue justo vulputate nascetur convallis varius orci fringilla nulla pharetr

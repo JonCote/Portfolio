@@ -1,11 +1,11 @@
 ---
-title: Globular Dynamic Particle System
-video: https://www.youtube.com/embed/mx165chMrPo
-image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
-category: Computer Animation
+title: Inverse Kinematics
+video: https://www.youtube.com/embed/MEP0tvHMr1Q
+image: ~/assets/images/InverseKinematics.jpg
+category: Computer Graphics & Animation
 tags:
-  - C#
-  - Unity
+  - C++
+  - OpenGL
 metadata:
   canonical: https://www.youtube.com/watch?v=mx165chMrPo&t=38s
 ---
