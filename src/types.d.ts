@@ -24,6 +24,9 @@ export interface Post {
   image?: ImageMetadata | string;
 
   /**  */
+  video?: string;
+
+  /**  */
   category?: Taxonomy;
   /**  */
   tags?: Taxonomy[];

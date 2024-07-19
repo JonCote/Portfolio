@@ -1,12 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 
 import { getPermalink } from '~/utils/permalinks';
-import { getFormattedDate } from '~/utils/utils';
+
 
 import type { Post } from '~/types';
 
@@ -20,35 +19,17 @@ const { post, url } = Astro.props;
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
   <article>
-    <header class={post.image ? '' : ''}>
+    <header class={post.video ? '' : post.image ? '' : ''}>
       <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-          {
-            post.author && (
-              <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block">{post.author}</span>
-              </>
-            )
-          }
           {
             post.category && (
               <>
                 {' '}
-                ·{' '}
+                {' '}
                 <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
                   {post.category.title}
                 </a>
-              </>
-            )
-          }
-          {
-            post.readingTime && (
-              <>
-                &nbsp;· <span>{post.readingTime}</span> min read
               </>
             )
           }
@@ -67,7 +48,13 @@ const { post, url } = Astro.props;
       </p>
 
       {
-        post.image ? (
+        post.video ? (
+          <div class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700">
+            <iframe class="w-full h-[506px]"
+              src={post.video}>
+            </iframe>
+          </div>
+        ) : post.image ? (
           <Image
             src={post.image}
             class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"

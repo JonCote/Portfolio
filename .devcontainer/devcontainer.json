@@ -9,7 +9,10 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [4321, 3000],
+	"containerEnv": {
+    	"CHOKIDAR_USEPOLLING": "true"
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",

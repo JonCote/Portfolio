@@ -13,6 +13,7 @@ import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
 
+
 export const prerender = true;
 
 export const getStaticPaths = (async () => {
@@ -25,6 +26,7 @@ const { post } = Astro.props as Props;
 
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+const video = (await findImage(post.video)) as string | undefined;
 
 const metadata = merge(
   {
@@ -36,8 +38,8 @@ const metadata = merge(
     },
     openGraph: {
       type: 'article',
-      ...(image
-        ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
+      ...(
+        image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
         : {}),
     },
   },
@@ -46,8 +48,7 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-
-  <SinglePost post={{ ...post, image: image }} url={url}>
+  <SinglePost post={{ ...post, image: image, video: video }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
   <ToBlogLink />
