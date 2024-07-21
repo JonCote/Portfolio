@@ -30,11 +30,11 @@ The deformation algorithm is divided into three phases:
 
 ## Removal of high-frequency details 
 
-<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/removal-hf-details.png">
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/removal-hf-details.png">
 
 Removal of the high-frequency details from the vertices *R* in *S* is accomplished by the minimization of thin-plate energy, which involves solving the bi-Laplacian system arising from the quadratic energy minimization:
 
-<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/removal-hf-details-eq.png">
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/removal-hf-details-eq.png">
 
 where **O**<sub>*H*</sub> are the handle *H*'s vertex positions, **L**<sub>*w*</sub> is the cotan Laplacian of ***S***, and **M** is the mass matrix of ***S***.  Notice that **L**<sub>*w*</sub> is the symmetric matrix consisting of the cotangent weights only (without the division by Voronoi areas). In other words, it evaluates an "integrated" Laplacian rather than an "averaged" Laplacian when applied to a vector of vertices. The inverse mass matrix appearing in the formula above then applies the appropriate rescaling so that the Laplacian operator can be applied again (i.e., so that the Laplacian value computed at each vertex can be interpreted as a piecewise linear scalar field whose Laplacian can be computed).
 
@@ -43,18 +43,18 @@ After applying the above equation we get a new mesh ***B*** that has the high-fr
 
 ## Deforming the smooth mesh
 
-<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/deform-mesh.png"> 
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/deform-mesh.png"> 
 
 The computation of the new deformed mesh is done by solving the minimization (similarly to previous step):
 
-<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/deform-mesh-eq.png">
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/deform-mesh-eq.png">
 
 where *t*(**O**<sub>*H*</sub>) are the new handle vertex positions after applying the user's transformation. We then call this new mesh ***B'***
 
 
 ## Transferring high-frequency details to the deformed surface
 
-<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/trans-hf-details.png">
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/trans-hf-details.png">
 
 The high-frequency details on the original surface are extracted from ***S*** and transferred to ***B'***
 
