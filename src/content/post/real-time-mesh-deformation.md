@@ -56,13 +56,12 @@ where *t*(**O**<sub>*H*</sub>) are the new handle vertex positions after applyin
 
 <img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/trans-hf-details.png">
 
-The high-frequency details on the original surface are extracted from ***S*** and transferred to ***B'***
-
-
- First encode the high-frequency details of ***S*** w.r.t ***B***. We define an orthogonal reference frame on every vertex *v* of ***B*** using:
+The high-frequency details on the original surface are extracted from ***S*** and transferred to ***B'***. First encode the high-frequency details of ***S*** w.r.t ***B***. We define an orthogonal reference frame on every vertex *v* of ***B*** using:
 
 1. The unit vertex normal
 2. The normalized projection of one of *v*'s outgoing edges onto the tangent plane defined by the vertex normal. A stable choice is the edge whose projection onto the tangent plane is longest.
 3. The cross-product between (1) and (2)
 
 For every vertex *v*, we compute the displacement vector that takes *v* from ***B*** to ***S*** and represent it as a vector in *v*'s reference frame. For every vertex of ***B'*** , we also construct a reference frame using the normal and the same outgoing edge we selected for ***B***. We can now use the displacement vector components computed in the previous paragraph to define transferred displacement vectors in the new reference frames of ***B'*** . Applying the transferred displacements to the vertices of ***B'*** generates the final deformed mesh ***S'*** .
+
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/final-results.png">
