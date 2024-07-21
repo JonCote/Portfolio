@@ -1,7 +1,7 @@
 ---
 title: Real Time Mesh Deformation
 video: https://www.youtube.com/embed/QjVXeX8Xyy8
-image: ~/assets/images/MeshDeformation.jpg
+image: ~/assets/images/real-time-mesh-deform/MeshDeformation.jpg
 category: Computer Graphics & Animation
 tags:
   - Python
@@ -10,40 +10,59 @@ metadata:
   canonical: https://www.youtube.com/watch?v=mx165chMrPo&t=38s
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+*Final project for UVic Geometric modeling course*
 
-## Nostra torquent consequat volutpat aliquet neque
+Computed a mesh deformation based on interactively applied rotations and translations to a subset of the mesh's vertices. Let *S* be out input surface, *H* be the subset of *S*  defining the "handle" vertices that the user can manipulate (or leave fixed) and *R* be the remaining vertices in *S* . 
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit proin, aenean litora volutpat urna egestas magnis arcu non, cras ut cursus et sed morbi lectus. Integer faucibus sagittis eu nunc urna aliquet a laoreet torquent, suspendisse penatibus nulla sollicitudin congue rutrum dictum. Ornare mi habitasse fermentum phasellus dui et morbi litora sodales dictum id erat, nibh purus class ligula aenean lectus venenatis euismod cras torquent ac. Senectus sagittis conubia hendrerit at egestas porta venenatis nisi metus gravida tempor, aenean facilisis nisl ante facilisi lacus integer hac iaculis purus. Scelerisque libero torquent egestas curae tellus viverra inceptos imperdiet urna, porta suspendisse interdum primis odio morbi tempor commodo dictumst, suscipit ornare habitasse semper feugiat cras quisque lobortis.
+We then want to compute a new surface that contains:
 
-Iaculis arcu commodo dis proin vitae himenaeos, ante tristique potenti magna ligula, sagittis libero fermentum ullamcorper sociis. Sem eros non arcu natoque fringilla lacus vestibulum lacinia integer mus viverra in proin, sagittis fusce tortor erat enim rutrum vulputate curae laoreet class diam. Inceptos convallis ac nisi natoque nam quisque magnis ut nullam fringilla curae, luctus lacus purus habitant erat magna molestie class habitasse metus, nibh lobortis tortor curabitur neque phasellus feugiat netus morbi parturient. Neque malesuada mauris justo himenaeos pharetra, ullamcorper enim ligula a nulla consequat, eget vivamus velit ridiculus.
+- the verices in *H* translated/rotated using the user-provided transformation *t*, and
+- the vertices in *R* properly deformed.
 
-## Praesent tellus ad sapien erat or
+The deformation algorithm is divided into three phases:
 
-- Quam orci nostra mi nulla, hac a.
+1. removal of high-frequency details
+2. deforming the smooth mesh
+3. transfer of high-frequency details to the deformed surface
 
-- Interdum iaculis quis tellus sociis orci nulla, quam rutrum conubia tortor primis.
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/real-time-mesh-deform/MeshDeformation.jpg">
 
-- Non felis sem placerat aenean duis, ornare turpis nostra.
 
-- Habitasse duis sociis sagittis cursus, ante dictumst commodo.
+## Removal of high-frequency details 
 
-Duis maecenas massa habitasse inceptos imperdiet scelerisque at condimentum ultrices, nam dui leo enim taciti varius cras habitant pretium rhoncus, ut hac euismod nostra metus sagittis mi aenean. Quam eleifend aliquet litora eget a tempor, ultricies integer vestibulum non felis sodales, eros diam massa libero iaculis.
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/removal-hf-details.png">
 
-Nisl ligula ante magnis himenaeos pellentesque orci cras integer urna ut convallis, id phasellus libero est nunc ultrices eget blandit massa ac hac, morbi vulputate quisque tellus feugiat conubia luctus tincidunt curae fermentum. Venenatis dictumst tincidunt senectus vivamus duis dis sociis taciti porta primis, rhoncus ridiculus rutrum curae mattis ullamcorper ac sagittis nascetur curabitur erat, faucibus placerat vulputate eu at habitasse nulla nisl interdum. Varius turpis dignissim montes ac ante tristique quis parturient hendrerit faucibus, consequat auctor penatibus suspendisse rutrum erat nulla inceptos est justo, etiam mollis mauris facilisi cras sociosqu eu sapien sed.
+Removal of the high-frequency details from the vertices *R* in *S* is accomplished by the minimization of thin-plate energy, which involves solving the bi-Laplacian system arising from the quadratic energy minimization:
 
-Blandit aptent conubia mollis mauris habitasse suspendisse torquent aenean, ac primis auctor congue cursus mi posuere molestie, velit elementum per feugiat libero dictumst phasellus. Convallis mollis taciti condimentum praesent id porttitor ac dictumst at, sed in eu eleifend vehicula fermentum lectus litora venenatis, gravida hac molestie cum sociosqu mus viverra torquent. Congue est fusce habitasse ridiculus integer suscipit platea volutpat, inceptos varius elementum pellentesque malesuada interdum magnis. Hac lacus eget enim purus massa commodo nec lectus natoque fames arcu, mattis class quam ut neque dui cras quis diam orci sed velit, erat morbi eros suscipit sagittis laoreet vivamus torquent nulla turpis.
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/removal-hf-details-eq.png">
 
-Ridiculus velit suscipit consequat auctor interdum magna gravida dictumst libero ut habitasse, sollicitudin vehicula suspendisse leo erat tristique at platea sagittis proin dignissim, id ornare scelerisque et urna maecenas congue tincidunt dictum malesuada. Dui vulputate accumsan scelerisque ridiculus dictum quisque et nam hac, tempus ultricies curabitur proin netus diam vivamus. Vestibulum ante ac auctor mi urna risus lacinia vulputate justo orci sociis dui semper, commodo morbi enim vivamus neque sem pellentesque velit donec hac metus odio. Tempor ultrices himenaeos massa sollicitudin mus conubia scelerisque cubilia, nascetur potenti mauris convallis et lectus gravida egestas sociis, erat eros ultricies aptent congue tortor ornare.
+where **O**<sub>*H*</sub> are the handle *H*'s vertex positions, **L**<sub>*w*</sub> is the cotan Laplacian of ***S***, and **M** is the mass matrix of ***S***.  Notice that **L**<sub>*w*</sub> is the symmetric matrix consisting of the cotangent weights only (without the division by Voronoi areas). In other words, it evaluates an "integrated" Laplacian rather than an "averaged" Laplacian when applied to a vector of vertices. The inverse mass matrix appearing in the formula above then applies the appropriate rescaling so that the Laplacian operator can be applied again (i.e., so that the Laplacian value computed at each vertex can be interpreted as a piecewise linear scalar field whose Laplacian can be computed).
 
-Pretium aliquet sodales aliquam tincidunt litora lectus, erat dui nibh diam mus, sed hendrerit condimentum senectus arcu. Arcu a nibh auctor dapibus eros turpis tempus commodo, libero hendrerit dictum interdum mus class sed scelerisque, sapien dictumst enim magna molestie habitant donec. Fringilla dui sed curabitur commodo varius est vel, viverra primis habitant sapien montes mattis dignissim, gravida cubilia laoreet tempus aliquet senectus. Sociosqu purus praesent porttitor curae sollicitudin accumsan feugiat maecenas donec quis lacus, suscipit taciti convallis odio morbi eros nibh bibendum nunc orci. Magna cras nullam aliquam metus nibh sagittis facilisi tortor nec, mus varius curae ridiculus fames congue interdum erat urna, neque odio lobortis mi mattis diam cubilia arcu.
+After applying the above equation we get a new mesh ***B*** that has the high-frequency details from the part of the surface we want to deform removed.
 
-Laoreet fusce nec class porttitor mus proin aenean, velit vestibulum feugiat porta egestas sapien posuere, conubia nisi tempus varius hendrerit tortor. Congue aliquam scelerisque neque vivamus habitasse semper mauris pellentesque accumsan posuere, suspendisse lectus gravida erat sagittis arcu praesent mus ornare. Habitasse nibh nam morbi mollis senectus erat risus, cum sollicitudin class platea congue mattis venenatis, luctus aenean parturient hendrerit malesuada ante. Mus auctor tincidunt consequat massa tortor nulla luctus habitasse vestibulum quis velit, laoreet sagittis cum facilisi in sem tellus leo vulputate vehicula bibendum orci, felis nisl blandit lacus convallis congue turpis magna facilisis condimentum.
 
-Dictumst pellentesque urna donec sociis suscipit montes consequat, commodo quam habitasse senectus fringilla maecenas, inceptos magna tristique eu nullam nam. Maecenas orci nibh hac eu tristique ut penatibus ultrices ante, pellentesque cubilia pharetra dis facilisis aliquam praesent malesuada vivamus, commodo cras velit convallis molestie nec tellus augue. Etiam ut convallis risus id dapibus platea laoreet accumsan, habitant et aenean netus inceptos iaculis per, mauris curae at ligula odio ad eu. Mauris erat tempor interdum sapien commodo per nullam tortor, fusce facilisis vehicula egestas dui nulla conubia ut fames, fringilla et tincidunt penatibus facilisi at mollis.
+## Deforming the smooth mesh
 
-Fermentum sociosqu litora primis sollicitudin fusce diam consequat vehicula per lobortis et, viverra sodales magna rutrum sed mollis faucibus molestie purus montes est, risus nostra congue venenatis lectus enim torquent eros dis dapibus. Dui suscipit scelerisque massa ligula euismod accumsan augue, magna vel lacus ante nullam senectus commodo, viverra cubilia eros eget penatibus tempor. Mattis mauris hac felis semper dui sociis faucibus mollis ornare pretium aliquam velit nisl, quis litora sem at vel duis rutrum imperdiet natoque viverra himenaeos tempor.
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/deform-mesh.png"> 
 
-Integer eu tristique purus luctus vivamus porttitor vel nisl, tortor malesuada augue vulputate diam velit pellentesque sodales, duis phasellus vestibulum fermentum leo facilisi porta. Hac porttitor cum dapibus volutpat quisque odio taciti nulla senectus mollis curae, accumsan suscipit cubilia tempor ligula in venenatis justo leo erat, magna tincidunt nullam lacinia luctus malesuada non vivamus praesent pharetra. Non quam felis montes pretium volutpat suspendisse lacus, torquent magna dictumst orci libero porta, feugiat taciti cras ridiculus aenean rutrum. Tellus nostra tincidunt hac in ligula mi vulputate venenatis pellentesque urna dui, at luctus tristique quisque vel a dignissim scelerisque platea pretium, suspendisse ante phasellus porttitor quis aliquam malesuada etiam enim nullam.
+The computation of the new deformed mesh is done by solving the minimization (similarly to previous step):
 
-Hendrerit taciti litora nec facilisis diam vehicula magnis potenti, parturient velit egestas nisl lobortis tincidunt rutrum cursus, fusce senectus mi massa primis mattis rhoncus. Accumsan est ac varius consequat vulputate, ligula cursus euismod sagittis inceptos scelerisque, lacus malesuada torquent dictumst. Volutpat morbi metus urna rhoncus nunc tempor molestie, congue curabitur quis interdum posuere. Mollis viverra velit tortor mus netus nunc molestie metus, sem massa himenaeos luctus feugiat taciti iaculis fames porttitor, leo arcu consequat gravida dapibus pulvinar elementum.
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/deform-mesh-eq.png">
+
+where *t*(**O**<sub>*H*</sub>) are the new handle vertex positions after applying the user's transformation. We then call this new mesh ***B'***
+
+
+## Transferring high-frequency details to the deformed surface
+
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/trans-hf-details.png">
+
+The high-frequency details on the original surface are extracted from ***S*** and transferred to ***B'***
+
+
+ First encode the high-frequency details of ***S*** w.r.t ***B***. We define an orthogonal reference frame on every vertex *v* of ***B*** using:
+
+1. The unit vertex normal
+2. The normalized projection of one of *v*'s outgoing edges onto the tangent plane defined by the vertex normal. A stable choice is the edge whose projection onto the tangent plane is longest.
+3. The cross-product between (1) and (2)
+
+For every vertex *v*, we compute the displacement vector that takes *v* from ***B*** to ***S*** and represent it as a vector in *v*'s reference frame. For every vertex of ***B'*** , we also construct a reference frame using the normal and the same outgoing edge we selected for ***B***. We can now use the displacement vector components computed in the previous paragraph to define transferred displacement vectors in the new reference frames of ***B'*** . Applying the transferred displacements to the vertices of ***B'*** generates the final deformed mesh ***S'*** .

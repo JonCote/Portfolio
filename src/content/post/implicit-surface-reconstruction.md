@@ -18,7 +18,7 @@ Tasked with the construction of an implicit function `f(x)` defined on all `x` R
 
 Construct  `f`  by interpolating a set of target values,  `di`, at "constraint locations",  `ci`. The MLS interpolant is defined by minimization of the form
 
-<img src="implicit-surface-recon-images/MLS-interp-eq.png">
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/MLS-interp-eq.png">
 
 where `phi(x)` lies in the space of admissible function (e.g., multivariate polynomials up to some degree) and `w` is a weight function that prioritizes each constraint equation depending on the evaluation point, `x`.
 
@@ -34,7 +34,8 @@ To construct the set of constraint equations each point `pi` in the input point 
 
 After these steps, we have `3n` equations for the implicit function  `f(x)`.
 
-** ADD Image of points **
+Implementation result given cat point cloud:
+<img src="https://raw.githubusercontent.com/JonCote/Portfolio/main/src/assets/images/implicit-surface-recon-images/constraint-sets.png">
 
 The green, red and blue points correspond to inside, outside, and on the surface respectively. The blue points in the right figure are the same as the black points in left figure.
 
