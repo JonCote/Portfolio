@@ -6,11 +6,15 @@ category: Computer Graphics & Animation
 tags:
   - Python
   - igl
+  - Mathmatics
 metadata:
   canonical: https://www.youtube.com/watch?v=mx165chMrPo&t=38s
 ---
 
 *Final project for UVic Geometric modeling course*
+
+GitHub: https://github.com/JonCote/MeshDeformation
+
 
 Computed a mesh deformation based on interactively applied rotations and translations to a subset of the mesh's vertices. Let *S* be out input surface, *H* be the subset of *S*  defining the "handle" vertices that the user can manipulate (or leave fixed) and *R* be the remaining vertices in *S* . 
 
