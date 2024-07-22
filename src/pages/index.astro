@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -42,12 +41,8 @@ const metadata = {
             },
           },
           {
-            icon: 'tabler:brand-youtube',
-            callToAction: {
-              target: '_blank',
-              text: 'YouTube',
-              href: 'https://www.youtube.com/@JonCoteDev',
-            },
+            icon: 'tabler:mail',
+            title: 'JonTCote@gmail.com',
           },
         ]}
         columns={3}
@@ -69,7 +64,7 @@ const metadata = {
 
   <BlogLatestPosts
     id="blog"
-    title="Projects"
+    title="Recent Projects"
     information={``}
   >
     <Fragment slot="bg">
@@ -185,20 +180,6 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Let's create together"
-    subtitle="Ready to transform your vision into captivating designs?"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Hire me',
-        href: '/',
-      },
-    ]}
   />
   
 </Layout>
